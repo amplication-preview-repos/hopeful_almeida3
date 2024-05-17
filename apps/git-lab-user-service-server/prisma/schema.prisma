@@ -1,0 +1,31 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model GitLabUser {
+  avatarUrl       String?
+  createdAt       DateTime  @default(now())
+  email           String?
+  fullName        String?
+  gitlabId        Int?
+  glId            Int?
+  glUserAvatarUrl String?
+  glUserCreatedAt DateTime?
+  glUserEmail     String?
+  glUserFullName  String?
+  glUserId        Int?
+  glUserState     String?
+  glUserUsername  String?
+  id              String    @id @default(cuid())
+  name            String?
+  state           String?
+  updatedAt       DateTime  @updatedAt
+  userEmail       String?
+  username        String?
+  userName        String?
+}
